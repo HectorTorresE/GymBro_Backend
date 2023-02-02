@@ -2,7 +2,7 @@
 
 class CreateDeviseApiTables < ActiveRecord::Migration[7.0]
   def change
-    create_table :devise_api_tokens, type: :uuid  do |t|
+    create_table :devise_api_tokens, type: :uuid do |t|
       t.belongs_to :resource_owner, null: false, type: :uuid, polymorphic: true, index: true
       t.string :access_token, null: false, index: true
       t.string :refresh_token, null: true, index: true
